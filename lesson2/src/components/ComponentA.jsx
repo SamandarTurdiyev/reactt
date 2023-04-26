@@ -48,7 +48,8 @@ console.log(props);
  
 
                 </p>
-                <button onClick={handleBox} className="box-part-btn">Close</button>
+                <button onClick={handleBox} className="box-part-btn">Closse</button>
+
                 </div>
              </div>
         </div>
