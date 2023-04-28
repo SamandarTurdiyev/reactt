@@ -1,11 +1,11 @@
-import ComponentA from "./components/ComponentA";
+import RestcounterFetch from './Fetch/RectcounterFetch';
 import './App.css'
 
 function App(params) {
     
     return (
         <div className="App">
-        <ComponentA/>
+            <RestcounterFetch/>
         </div>
     )
 }
