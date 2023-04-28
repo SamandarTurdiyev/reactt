@@ -1,11 +1,12 @@
-import ComponentA from "./components/ComponentA";
 import './App.css'
-
+import Lesson52  from './Lesson52/Lesson52';
+import TodoList from './TodoList/TodoList';
 function App(params) {
     
     return (
         <div className="App">
-        <ComponentA/>
+        <Lesson52/>
+        <TodoList/>
         </div>
     )
 }
