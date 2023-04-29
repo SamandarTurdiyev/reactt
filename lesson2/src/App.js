@@ -1,11 +1,10 @@
-import ComponentA from "./components/ComponentA";
-import './App.css'
-
+import './App.css';
+import Rest from './Rest/Rest';
 function App(params) {
     
     return (
         <div className="App">
-        <ComponentA/>
+            <Rest />
         </div>
     )
 }
