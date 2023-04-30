@@ -1,0 +1,50 @@
+.restcounterTitle{
+    text-align: center;
+    width: 600px;
+    padding: 12px 12px;
+    font-size: 18px;
+    font-weight: 9oo;
+    margin: 24px;
+    outline: none;
+    cursor: text;
+}
+.searchInput{
+    display: flex;
+    justify-content: center;
+}
+.cards{
+    display: flex;
+    max-width: 1200px;    
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 0 auto;
+    column-gap: 24px;
+    row-gap: 40px;
+}
+.card:hover{
+    background-color: rgba(255, 136, 0, 0.833);
+    cursor: pointer;
+}
+.card{
+    max-width: 350px;
+    border: 2px solid grey;
+    transition: 0.5s;
+    border-radius: 12px;
+}
+.flag{
+    width: 350px;
+    height: 200px;
+    object-fit: cover;
+}
+.title{
+    color: rgb(0, 17, 255);
+    text-align: center;
+   
+    
+}
+.capital{
+    color: rgb(255, 85, 0);
+    font-size: 24px;
+    font-weight: 700;
+    text-align: center;
+}
