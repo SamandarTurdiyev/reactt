@@ -1,3 +1,17 @@
+.restcounterTitle{
+    text-align: center;
+    width: 600px;
+    padding: 12px 12px;
+    font-size: 18px;
+    font-weight: 9oo;
+    margin: 24px;
+    outline: none;
+    cursor: text;
+}
+.searchInput{
+    display: flex;
+    justify-content: center;
+}
 .cards{
     display: flex;
     max-width: 1200px;    

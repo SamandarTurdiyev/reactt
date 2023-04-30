@@ -20,6 +20,9 @@ const Rest = () => {
 
     return(
        <>
+       <div className={styles.searchInput}>
+       <input type="text" placeholder='search counter' className={styles.restcounterTitle} />
+       </div>
        <div className={styles.cards}>
      {
      data.map((element) => (
