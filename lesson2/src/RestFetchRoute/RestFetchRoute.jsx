@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useState, useEffect  } from 'react';
 import axios from 'axios'
 import styles from './RestFetchRoute.module.scss';
 // import { Link } from 'react-router-dom';
@@ -31,16 +31,18 @@ const RestFetchRoute = () => {
 
 
      data.map((element) => (
-       
-        <Card key={element.id} img={element.flags.png} title={element.name.common} capital={element.capital} ccn={element.ccn3}/>
-        // <div className={styles.card} key={element.id}> 
+      
+        <>
+        <Card key={element.id} img={element.flags.png} name={element.name.common} capital={element.capital} ccn={element.ccn3}/>
+        {/* // <div className={styles.card} key={element.id}> 
         //      <img className={styles.flag} src={element.flags.png} alt={element.name.common} />
         //      <h1 className={styles.title}>{element.name.common}</h1>
         //      <p className={styles.capital}>Capital : {element.capital}</p>
         //      <button>Read more</button>
-        // </div>
+        // </div> */}
+        </>
     ))
-    }     
+    }   
       </div>
        </>
     )

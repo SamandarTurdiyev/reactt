@@ -2,17 +2,17 @@ import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
 
-const SingleArticle = (props) => {
-    
-    const [data, setData] = useState('');
+const SingleArticle = () => {
+    const { name } = useParams();
+    console.log(name);
+    const [item, setItem] = useState({});
 
-    const { ccn } = useParams();
 
     const FetchData  = async () =>{
         try {
-            const response = await axios.get(`https://restcountries.com/v3.1/alpha/${ccn}`);
-            setData(response.data[0]);
-            console.log(response.data[0]);
+            const response = await axios.get(`https://restcountries.com/v3.1/name/${name}`);
+            setItem(response.data[0]);
+            console.log(response.data[0] );
         } catch (error) {
             console.error(error);
         }
@@ -20,14 +20,14 @@ const SingleArticle = (props) => {
     useEffect(() => {
         FetchData()
     }, []);
-    console.log(data);
     return(
         <div>
           
-            <div key={data.ccn}>
-                <img src={data.img} alt={data.title} />
-                <h2>{data.title}</h2>
-                <p>{data.capital}</p>
+            <div key={item}>
+                {/* <img src={item.flags.png} /> */}
+               <p>{item.flag}</p>
+                <p>{item.capital}</p>
+                <p>{name}</p>
             </div>
            
         </div>
@@ -35,3 +35,13 @@ const SingleArticle = (props) => {
 }
 
 export default SingleArticle;
+
+
+
+
+
+
+
+
+
+

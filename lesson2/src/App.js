@@ -3,7 +3,7 @@ import RestFetchRoute from './RestFetchRoute/RestFetchRoute';
 import Error from './Error/Error';
 import SingleArticle from './SingleArticle/SingleArticle';
 
-function App(params) {
+function App() {
     
     return (
         <>
@@ -13,7 +13,7 @@ function App(params) {
                       <Route element={ <RestFetchRoute/> } path="/" />
                       <Route element={ <Error/> } path="*" />
                       <Route element={<Navigate to="/error404"/>} path="*"/>
-                      <Route path="news/:ccn" element={<SingleArticle/>}/>
+                      <Route path="name/:name" element={<SingleArticle/>}/>
              </Routes>
        
         </>
