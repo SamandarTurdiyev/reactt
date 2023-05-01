@@ -13,7 +13,7 @@ function App(params) {
                       <Route element={ <RestFetchRoute/> } path="/" />
                       <Route element={ <Error/> } path="*" />
                       <Route element={<Navigate to="/error404"/>} path="*"/>
-                      <Route path="news/:title" element={<SingleArticle/>}/>
+                      <Route path="news/:ccn" element={<SingleArticle/>}/>
              </Routes>
        
         </>
