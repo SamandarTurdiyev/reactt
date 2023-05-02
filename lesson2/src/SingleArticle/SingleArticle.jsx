@@ -1,10 +1,11 @@
 import { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import axios from "axios";
+
+import single from './SingleArticle.module.scss'
 
 const SingleArticle = () => {
     const { name } = useParams();
-    console.log(name);
     const [item, setItem] = useState({});
 
 
@@ -12,7 +13,6 @@ const SingleArticle = () => {
         try {
             const response = await axios.get(`https://restcountries.com/v3.1/name/${name}`);
             setItem(response.data[0]);
-            console.log(response.data[0] );
         } catch (error) {
             console.error(error);
         }
@@ -23,11 +23,13 @@ const SingleArticle = () => {
     return(
         <div>
           
-            <div key={item}>
+            <div className={single.card} key={item}>
                 {/* <img src={item.flags.png} /> */}
-               <p>{item.flag}</p>
-                <p>{item.capital}</p>
-                <p>{name}</p>
+                <h2 className={single.title}>{name}</h2>
+                <p className={single.capital}><span className={single.span}>Capital:</span> {item.capital}</p>
+                <p className={single.population}><span className={single.span}>Population:</span>{item.population}</p>
+                <p className={single.region}><span className={single.span}>Region:</span>{item.region}</p><br />
+                <Link to="/">Home Page</Link>
             </div>
            
         </div>

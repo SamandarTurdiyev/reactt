@@ -8,41 +8,41 @@ const RestFetchRoute = () => {
 
     const [data, setData] = useState([]);
 
+    const [searchtitle, setSearchTitle] = useState('')
+
+
     const FetchData  = async () =>{
         try {
             const response = await axios.get(`https://restcountries.com/v3.1/all`);
             setData(response.data);
-            // console.log(data);
         } catch (error) {
             console.error(error);
         }
     }
     useEffect(() => {
         FetchData()
-    }, [])
+    }, []);
+
+    const myData = data.filter((element) => {
+        if (!searchtitle.trim()) {
+            return element 
+        } else if (element.name.common.toLowerCase().includes(searchtitle.toLocaleLowerCase())) {
+            return element
+
+        }
+    }).map((element) => (
+        <Card key={element.id} img={element.flags.png} name={element.name.common} capital={element.capital} ccn={element.ccn3}/> 
+    ))
 
     return(
        <>
        <div className={styles.searchInput}>
-       <input type="text" placeholder='search counter' className={styles.restcounterTitle} />
+       <input type="text" placeholder='search counter' className={styles.restcounterTitle} value={searchtitle} onChange={(e) => setSearchTitle(e.target.value)}/>
        </div>
        <div className={styles.cards}>
      {
-
-
-     data.map((element) => (
-      
-        <>
-        <Card key={element.id} img={element.flags.png} name={element.name.common} capital={element.capital} ccn={element.ccn3}/>
-        {/* // <div className={styles.card} key={element.id}> 
-        //      <img className={styles.flag} src={element.flags.png} alt={element.name.common} />
-        //      <h1 className={styles.title}>{element.name.common}</h1>
-        //      <p className={styles.capital}>Capital : {element.capital}</p>
-        //      <button>Read more</button>
-        // </div> */}
-        </>
-    ))
-    }   
+        myData
+     }   
       </div>
        </>
     )

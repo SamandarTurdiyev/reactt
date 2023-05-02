@@ -1,0 +1,44 @@
+
+
+.card:hover{
+    background-color: rgba(255, 136, 0, 0.833);
+    cursor: pointer;
+}
+.card{
+    max-width: 350px;
+    border: 2px solid grey;
+    transition: 0.5s;
+    border-radius: 12px;
+    margin: 100px auto;
+}
+
+.title{
+    color: rgb(0, 17, 255);
+    text-align: center;
+   
+    
+}
+.span{
+    color: rgb(16, 13, 12);
+    font-size: 24px;
+    font-weight: 700;
+    text-align: center;
+}
+.capital{
+    color: rgb(255, 85, 0);
+    font-size: 24px;
+    font-weight: 700;
+    text-align: center;
+}
+.region{
+    color: rgb(255, 85, 0);
+    font-size: 24px;
+    font-weight: 700;
+    text-align: center;
+}
+.population{
+    color: rgb(0, 42, 255);
+    font-size: 24px;
+    font-weight: 700;
+    text-align: center;
+}
