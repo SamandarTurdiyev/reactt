@@ -24,11 +24,14 @@ const SingleArticle = () => {
         <div>
           
             <div className={single.card} key={item}>
-                {/* <img src={item.flags.png} /> */}
+                <img className={single.img} src={item.flags?.png} />
                 <h2 className={single.title}>{name}</h2>
                 <p className={single.capital}><span className={single.span}>Capital:</span> {item.capital}</p>
                 <p className={single.population}><span className={single.span}>Population:</span>{item.population}</p>
                 <p className={single.region}><span className={single.span}>Region:</span>{item.region}</p><br />
+                <p className={single.region}><a href={item.maps?.googleMaps} target="_blank">Geogle Maps</a></p><br />
+              
+
                 <Link to="/">Home Page</Link>
             </div>
            

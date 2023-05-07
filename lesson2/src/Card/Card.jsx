@@ -1,7 +1,7 @@
 import cards from './Cards.module.scss';
 import { Link } from 'react-router-dom';
 const Card = (props) => {
-    const {img, name, } = props;
+    const {img, name, maps } = props;
     return(
         <>
         

@@ -14,6 +14,8 @@ const RestFetchRoute = () => {
     const FetchData  = async () =>{
         try {
             const response = await axios.get(`https://restcountries.com/v3.1/all`);
+            console.log(response.data);
+
             setData(response.data);
         } catch (error) {
             console.error(error);
@@ -26,12 +28,12 @@ const RestFetchRoute = () => {
     const myData = data.filter((element) => {
         if (!searchtitle.trim()) {
             return element 
-        } else if (element.name.common.toLowerCase().includes(searchtitle.toLocaleLowerCase())) {
+        } else if (element.name.common.toLowerCase().includes(searchtitle.toLowerCase())) {
             return element
 
         }
     }).map((element) => (
-        <Card key={element.id} img={element.flags.png} name={element.name.common} capital={element.capital} ccn={element.ccn3}/> 
+        <Card key={element.id} img={element.flags.png} name={element.name.common} capital={element.capital} ccn={element.ccn3} maps= {element.maps.openStreetMaps}/> 
     ))
 
     return(
